@@ -11,9 +11,32 @@ struct ContentView: View {
     var body: some View {
         VStack{
             HStack{
-                NumButton(value: 1)
+                NumButton(value: 7)
+                
+                NumButton(value: 8)
+                
+                NumButton(value: 9)
             }
+            
+            HStack{
+                NumButton(value: 4)
+                
+                NumButton(value: 5)
+                
+                NumButton(value: 6)
+            }
+            
+            HStack{
+                NumButton(value: 1)
+                
+                NumButton(value: 2)
+                
+                NumButton(value: 3)
+            }
+            
         }
+            
+        //
     }
 }
 
