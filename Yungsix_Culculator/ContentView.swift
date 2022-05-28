@@ -17,11 +17,18 @@ struct ContentView: View {
                 .padding()
             
             HStack{
+                
+                OperButton(operation: "divide")
+            }
+            
+            HStack{
                 NumButton(value: 7)
                 
                 NumButton(value: 8)
                 
                 NumButton(value: 9)
+                
+                OperButton(operation: "multiply")
             }
             
             HStack{
@@ -30,6 +37,8 @@ struct ContentView: View {
                 NumButton(value: 5)
                 
                 NumButton(value: 6)
+                
+                OperButton(operation: "minus")
             }
             
             HStack{
@@ -38,22 +47,44 @@ struct ContentView: View {
                 NumButton(value: 2)
                 
                 NumButton(value: 3)
+                
+                OperButton(operation: "plus")
             }
             HStack{
                 Button {
                     
                 } label: {
                     ZStack{
-                        RoundedRectangle(cornerRadius: 40)
-                            .frame(width: 140.0, height: 70.0)
+                        RoundedRectangle(cornerRadius: 50)
+                            .frame(width: 160.0, height: 70.0)
                             .foregroundColor(.gray)
-                        Text("0")
-                            .padding()
-                            .frame(width: 70, height: 70)
-                            .foregroundColor(.white)
-                            .font(.largeTitle)
+                        HStack{
+                            Text("0")
+                                .padding()
+                                .foregroundColor(.white)
+                                .font(.largeTitle)
+                                Spacer()
+                        }
+                        .frame(width: 130.0, height: 70.0)
+                        
                     }
                 }
+                
+                Button {
+                    
+                } label: {
+                    Text(".")
+                        .padding()
+                        .frame(width: 70, height: 70)
+                        .foregroundColor(.white)
+                        .background(.gray)
+                        .font(.largeTitle)
+                        .clipShape(Circle())
+                }
+                .padding(2.5)
+                
+                
+                OperButton(operation: "equal")
                 
             }
             .padding(2.5)
