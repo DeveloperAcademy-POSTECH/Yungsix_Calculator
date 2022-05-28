@@ -39,9 +39,27 @@ struct ContentView: View {
                 
                 NumButton(value: 3)
             }
+            HStack{
+                Button {
+                    
+                } label: {
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 40)
+                            .frame(width: 140.0, height: 70.0)
+                            .foregroundColor(.gray)
+                        Text("0")
+                            .padding()
+                            .frame(width: 70, height: 70)
+                            .foregroundColor(.white)
+                            .font(.largeTitle)
+                    }
+                }
+                
+            }
+            .padding(2.5)
             
         }
-            
+        
         //
     }
 }

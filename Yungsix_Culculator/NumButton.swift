@@ -23,7 +23,7 @@ struct NumButton: View {
                     .font(.largeTitle)
                     .clipShape(Circle())
             }
-
+            .padding(2.5)
         }
     }
 }
