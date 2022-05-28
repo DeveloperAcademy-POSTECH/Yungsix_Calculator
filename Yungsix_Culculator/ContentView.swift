@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var result: Int = 0
+    
     var body: some View {
         VStack{
+            
+            Text(result, format: .number)
+                .padding()
+            
             HStack{
                 NumButton(value: 7)
                 
