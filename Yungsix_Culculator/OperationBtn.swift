@@ -17,13 +17,13 @@ struct OperationBtn: View {
             } label: {
                 Image(systemName: operation)
                     .padding()
-                    .frame(width: 70, height: 70)
+                    .frame(width: 75, height: 75)
                     .foregroundColor(.white)
                     .background(.orange)
-                    .font(.title)
+                    .font(.largeTitle)
                     .clipShape(Circle())
             }
-            .padding(2.5)
+            .padding(5)
         }
     }
 }

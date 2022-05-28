@@ -18,13 +18,13 @@ struct NumberBtn: View {
                 Text("\(value)")
                     .fontWeight(.semibold)
                     .padding()
-                    .frame(width: 70, height: 70)
+                    .frame(width: 75, height: 75)
                     .foregroundColor(.white)
                     .background(.gray)
-                    .font(.title)
+                    .font(.largeTitle)
                     .clipShape(Circle())
             }
-            .padding(2.5)
+            .padding(5)
         }
     }
 }

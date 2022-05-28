@@ -10,17 +10,19 @@ import SwiftUI
 struct ContentView: View {
     @State var result: Int = 0
     
-    var body: some View {
+    var body: some View {                          
         ZStack {
             VStack{
+                Spacer()
                 
                 HStack{
                     Spacer()
                     Text(result, format: .number)
-                        .font(.system(size: 80))
+                        .font(.system(size: 100))
+                        .fontWeight(.light)
                         .foregroundColor(.white)
                         .padding()
-                }.padding(.horizontal, 30.0)
+                }.padding(.horizontal, 0)
                 
                 HStack{
                     Button {
@@ -29,39 +31,40 @@ struct ContentView: View {
                         Text("AC")
                             .fontWeight(.semibold)
                             .padding()
-                            .frame(width: 70, height: 70)
-                            .foregroundColor(.white)
+                            .frame(width: 75, height: 75)
+                            .foregroundColor(.black)
                             .background(.gray)
-                            .font(.title2)
+                            .font(.title)
                             .clipShape(Circle())
                     }
-                    .padding(2.5)
+                    .padding(5)
                     
                     Button {
                         
                     } label: {
                         Image(systemName: "plus.forwardslash.minus")
                             .padding()
-                            .frame(width: 70, height: 70)
-                            .foregroundColor(.white)
+                            .frame(width: 75, height: 75)
+                            .foregroundColor(.black)
                             .background(.gray)
                             .font(.title)
                             .clipShape(Circle())
                     }
-                    .padding(2.5)
+                    .padding(5)
+                    
                     Button {
                         
                     } label: {
                         Text("%")
                             .fontWeight(.semibold)
                             .padding()
-                            .frame(width: 70, height: 70)
-                            .foregroundColor(.white)
+                            .frame(width: 75, height: 75)
+                            .foregroundColor(.black)
                             .background(.gray)
                             .font(.title)
                             .clipShape(Circle())
                     }
-                    .padding(2.5)
+                    .padding(5)
                     
                     OperationBtn(operation: "divide")
                 }
@@ -101,19 +104,20 @@ struct ContentView: View {
                     } label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 50)
-                                .frame(width: 160.0, height: 70.0)
+                                .frame(width: 170.0, height: 80.0)
                                 .foregroundColor(.gray)
                             HStack{
                                 Text("0")
                                     .fontWeight(.semibold)
                                     .padding()
                                     .foregroundColor(.white)
-                                    .font(.title)
+                                    .font(.largeTitle)
                                 Spacer()
                             }
-                            .frame(width: 130.0, height: 70.0)
+                            .frame(width: 135.0, height: 70.0)
                             
                         }
+                        .padding(5)
                     }
                     
                     Button {
@@ -122,22 +126,21 @@ struct ContentView: View {
                         Text(".")
                             .fontWeight(.black)
                             .padding()
-                            .frame(width: 70, height: 70)
+                            .frame(width: 75, height: 75)
                             .foregroundColor(.white)
                             .background(.gray)
-                            .font(.title)
+                            .font(.largeTitle)
                             .clipShape(Circle())
                     }
-                    .padding(2.5)
+                    .padding(5)
                     
                     
                     OperationBtn(operation: "equal")
                     
                 }
-                .padding(2.5)
-                
                 
             }
+            .padding(50.0)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.black)
