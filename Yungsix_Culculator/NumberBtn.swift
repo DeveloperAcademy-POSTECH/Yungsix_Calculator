@@ -1,25 +1,25 @@
 //
-//  operButton.swift
+//  NumButton.swift
 //  Yungsix_Culculator
 //
-//  Created by 최윤석 on 2022/05/28.
+//  Created by 최윤석 on 2022/05/27.
 //
 
 import SwiftUI
 
-struct OperButton: View {
-    var operation: String
+struct NumberBtn: View {
+    var value: Int
     
     var body: some View {
         HStack{
             Button {
-                
+                    
             } label: {
-                Image(systemName: operation)
+                Text("\(value)")
                     .padding()
                     .frame(width: 70, height: 70)
                     .foregroundColor(.white)
-                    .background(.orange)
+                    .background(.gray)
                     .font(.largeTitle)
                     .clipShape(Circle())
             }
@@ -28,8 +28,8 @@ struct OperButton: View {
     }
 }
 
-struct operButton_Previews: PreviewProvider {
+struct NumberBtn_Previews: PreviewProvider {
     static var previews: some View {
-        OperButton(operation: "divide")
+        NumberBtn(value: 1)
     }
 }

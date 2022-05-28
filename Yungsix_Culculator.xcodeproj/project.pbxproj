@@ -11,8 +11,8 @@
 		793BF8DB283E4FD400AC455C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793BF8DA283E4FD400AC455C /* ContentView.swift */; };
 		793BF8DD283E4FD500AC455C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793BF8DC283E4FD500AC455C /* Assets.xcassets */; };
 		793BF8E0283E4FD500AC455C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793BF8DF283E4FD500AC455C /* Preview Assets.xcassets */; };
-		79BA22DF28420CC700BBD4FF /* OperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA22DE28420CC700BBD4FF /* OperButton.swift */; };
-		79C23504284091630096C331 /* NumButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C23503284091630096C331 /* NumButton.swift */; };
+		79BA22DF28420CC700BBD4FF /* OperationBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA22DE28420CC700BBD4FF /* OperationBtn.swift */; };
+		79C23504284091630096C331 /* NumberBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C23503284091630096C331 /* NumberBtn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +21,8 @@
 		793BF8DA283E4FD400AC455C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		793BF8DC283E4FD500AC455C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		793BF8DF283E4FD500AC455C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		79BA22DE28420CC700BBD4FF /* OperButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperButton.swift; sourceTree = "<group>"; };
-		79C23503284091630096C331 /* NumButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumButton.swift; sourceTree = "<group>"; };
+		79BA22DE28420CC700BBD4FF /* OperationBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationBtn.swift; sourceTree = "<group>"; };
+		79C23503284091630096C331 /* NumberBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberBtn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +57,8 @@
 			children = (
 				793BF8D8283E4FD400AC455C /* Yungsix_CulculatorApp.swift */,
 				793BF8DA283E4FD400AC455C /* ContentView.swift */,
-				79C23503284091630096C331 /* NumButton.swift */,
-				79BA22DE28420CC700BBD4FF /* OperButton.swift */,
+				79C23503284091630096C331 /* NumberBtn.swift */,
+				79BA22DE28420CC700BBD4FF /* OperationBtn.swift */,
 				793BF8DC283E4FD500AC455C /* Assets.xcassets */,
 				793BF8DE283E4FD500AC455C /* Preview Content */,
 			);
@@ -144,8 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				793BF8DB283E4FD400AC455C /* ContentView.swift in Sources */,
-				79BA22DF28420CC700BBD4FF /* OperButton.swift in Sources */,
-				79C23504284091630096C331 /* NumButton.swift in Sources */,
+				79BA22DF28420CC700BBD4FF /* OperationBtn.swift in Sources */,
+				79C23504284091630096C331 /* NumberBtn.swift in Sources */,
 				793BF8D9283E4FD400AC455C /* Yungsix_CulculatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

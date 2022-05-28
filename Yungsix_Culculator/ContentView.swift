@@ -18,37 +18,37 @@ struct ContentView: View {
             
             HStack{
                 
-                OperButton(operation: "divide")
+                OperationBtn(operation: "divide")
             }
             
             HStack{
-                NumButton(value: 7)
+                NumberBtn(value: 7)
                 
-                NumButton(value: 8)
+                NumberBtn(value: 8)
                 
-                NumButton(value: 9)
+                NumberBtn(value: 9)
                 
-                OperButton(operation: "multiply")
+                OperationBtn(operation: "multiply")
             }
             
             HStack{
-                NumButton(value: 4)
+                NumberBtn(value: 4)
                 
-                NumButton(value: 5)
+                NumberBtn(value: 5)
                 
-                NumButton(value: 6)
+                NumberBtn(value: 6)
                 
-                OperButton(operation: "minus")
+                OperationBtn(operation: "minus")
             }
             
             HStack{
-                NumButton(value: 1)
+                NumberBtn(value: 1)
                 
-                NumButton(value: 2)
+                NumberBtn(value: 2)
                 
-                NumButton(value: 3)
+                NumberBtn(value: 3)
                 
-                OperButton(operation: "plus")
+                OperationBtn(operation: "plus")
             }
             HStack{
                 Button {
@@ -84,7 +84,7 @@ struct ContentView: View {
                 .padding(2.5)
                 
                 
-                OperButton(operation: "equal")
+                OperationBtn(operation: "equal")
                 
             }
             .padding(2.5)
