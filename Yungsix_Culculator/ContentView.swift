@@ -29,7 +29,7 @@ struct ContentView: View {
                         
                     } label: {
                         Text("AC")
-                            .fontWeight(.semibold)
+                            .fontWeight(.medium)
                             .padding()
                             .frame(width: 75, height: 75)
                             .foregroundColor(.black)
@@ -56,7 +56,7 @@ struct ContentView: View {
                         
                     } label: {
                         Text("%")
-                            .fontWeight(.semibold)
+                            .fontWeight(.medium)
                             .padding()
                             .frame(width: 75, height: 75)
                             .foregroundColor(.black)
@@ -105,16 +105,16 @@ struct ContentView: View {
                         ZStack{
                             RoundedRectangle(cornerRadius: 50)
                                 .frame(width: 170.0, height: 80.0)
-                                .foregroundColor(.gray)
+                                .foregroundColor(Color("numberColor"))
                             HStack{
                                 Text("0")
-                                    .fontWeight(.semibold)
+                                    .fontWeight(.medium)
                                     .padding()
                                     .foregroundColor(.white)
                                     .font(.largeTitle)
                                 Spacer()
                             }
-                            .frame(width: 135.0, height: 70.0)
+                            .frame(width: 140.0, height: 70.0)
                             
                         }
                         .padding(5)
@@ -124,11 +124,11 @@ struct ContentView: View {
                         
                     } label: {
                         Text(".")
-                            .fontWeight(.black)
+                            .fontWeight(.heavy)
                             .padding()
                             .frame(width: 75, height: 75)
                             .foregroundColor(.white)
-                            .background(.gray)
+                            .background(Color("numberColor"))
                             .font(.largeTitle)
                             .clipShape(Circle())
                     }

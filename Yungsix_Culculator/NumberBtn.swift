@@ -16,11 +16,11 @@ struct NumberBtn: View {
                     
             } label: {
                 Text("\(value)")
-                    .fontWeight(.semibold)
+                    .fontWeight(.medium)
                     .padding()
                     .frame(width: 75, height: 75)
                     .foregroundColor(.white)
-                    .background(.gray)
+                    .background(Color("numberColor"))
                     .font(.largeTitle)
                     .clipShape(Circle())
             }
