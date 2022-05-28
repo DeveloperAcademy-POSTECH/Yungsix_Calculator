@@ -20,7 +20,7 @@ struct OperationBtn: View {
                     .frame(width: 70, height: 70)
                     .foregroundColor(.white)
                     .background(.orange)
-                    .font(.largeTitle)
+                    .font(.title)
                     .clipShape(Circle())
             }
             .padding(2.5)
