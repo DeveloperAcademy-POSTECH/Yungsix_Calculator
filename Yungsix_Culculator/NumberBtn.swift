@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NumButton: View {
+struct NumberBtn: View {
     var value: Int
     
     var body: some View {
@@ -16,20 +16,21 @@ struct NumButton: View {
                     
             } label: {
                 Text("\(value)")
+                    .fontWeight(.medium)
                     .padding()
-                    .frame(width: 70, height: 70)
+                    .frame(width: 75, height: 75)
                     .foregroundColor(.white)
-                    .background(.gray)
+                    .background(Color("numberColor"))
                     .font(.largeTitle)
                     .clipShape(Circle())
             }
-
+            .padding(5)
         }
     }
 }
 
-struct NumButton_Previews: PreviewProvider {
+struct NumberBtn_Previews: PreviewProvider {
     static var previews: some View {
-        NumButton(value: 1)
+        NumberBtn(value: 1)
     }
 }

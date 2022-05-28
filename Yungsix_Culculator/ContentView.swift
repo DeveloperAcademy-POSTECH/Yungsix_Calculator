@@ -8,34 +8,144 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack{
-            HStack{
-                NumButton(value: 7)
+    @State var result: Int = 0
+    
+    var body: some View {                          
+        ZStack {
+            VStack{
+                Spacer()
                 
-                NumButton(value: 8)
+                HStack{
+                    Spacer()
+                    Text(result, format: .number)
+                        .font(.system(size: 100))
+                        .fontWeight(.light)
+                        .foregroundColor(.white)
+                        .padding()
+                }.padding(.horizontal, 0)
                 
-                NumButton(value: 9)
+                HStack{
+                    Button {
+                        
+                    } label: {
+                        Text("AC")
+                            .fontWeight(.medium)
+                            .padding()
+                            .frame(width: 75, height: 75)
+                            .foregroundColor(.black)
+                            .background(.gray)
+                            .font(.title)
+                            .clipShape(Circle())
+                    }
+                    .padding(5)
+                    
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .padding()
+                            .frame(width: 75, height: 75)
+                            .foregroundColor(.black)
+                            .background(.gray)
+                            .font(.title)
+                            .clipShape(Circle())
+                    }
+                    .padding(5)
+                    
+                    Button {
+                        
+                    } label: {
+                        Text("%")
+                            .fontWeight(.medium)
+                            .padding()
+                            .frame(width: 75, height: 75)
+                            .foregroundColor(.black)
+                            .background(.gray)
+                            .font(.title)
+                            .clipShape(Circle())
+                    }
+                    .padding(5)
+                    
+                    OperationBtn(operation: "divide")
+                }
+                
+                HStack{
+                    NumberBtn(value: 7)
+                    
+                    NumberBtn(value: 8)
+                    
+                    NumberBtn(value: 9)
+                    
+                    OperationBtn(operation: "multiply")
+                }
+                
+                HStack{
+                    NumberBtn(value: 4)
+                    
+                    NumberBtn(value: 5)
+                    
+                    NumberBtn(value: 6)
+                    
+                    OperationBtn(operation: "minus")
+                }
+                
+                HStack{
+                    NumberBtn(value: 1)
+                    
+                    NumberBtn(value: 2)
+                    
+                    NumberBtn(value: 3)
+                    
+                    OperationBtn(operation: "plus")
+                }
+                HStack{
+                    Button {
+                        
+                    } label: {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 50)
+                                .frame(width: 170.0, height: 80.0)
+                                .foregroundColor(Color("numberColor"))
+                            HStack{
+                                Text("0")
+                                    .fontWeight(.medium)
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .font(.largeTitle)
+                                Spacer()
+                            }
+                            .frame(width: 140.0, height: 70.0)
+                            
+                        }
+                        .padding(5)
+                    }
+                    
+                    Button {
+                        
+                    } label: {
+                        Text(".")
+                            .fontWeight(.heavy)
+                            .padding()
+                            .frame(width: 75, height: 75)
+                            .foregroundColor(.white)
+                            .background(Color("numberColor"))
+                            .font(.largeTitle)
+                            .clipShape(Circle())
+                    }
+                    .padding(5)
+                    
+                    
+                    OperationBtn(operation: "equal")
+                    
+                }
+                
             }
-            
-            HStack{
-                NumButton(value: 4)
-                
-                NumButton(value: 5)
-                
-                NumButton(value: 6)
-            }
-            
-            HStack{
-                NumButton(value: 1)
-                
-                NumButton(value: 2)
-                
-                NumButton(value: 3)
-            }
-            
+            .padding(50.0)
         }
-            
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.black)
+        .edgesIgnoringSafeArea(.all)
+        
         //
     }
 }
