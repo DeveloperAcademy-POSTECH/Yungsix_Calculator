@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct operButton: View {
+struct OperButton: View {
     var operation: String
     
     var body: some View {
@@ -30,6 +30,6 @@ struct operButton: View {
 
 struct operButton_Previews: PreviewProvider {
     static var previews: some View {
-        operButton(operation: "divide")
+        OperButton(operation: "divide")
     }
 }
