@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var result: Int = 0
+    @State var result = "0"
+    @State var firstNum = "0"
     
     var body: some View {                          
         ZStack {
@@ -17,7 +18,7 @@ struct ContentView: View {
                 
                 HStack{
                     Spacer()
-                    Text(result, format: .number)
+                    Text(result)
                         .font(.system(size: 100))
                         .fontWeight(.light)
                         .foregroundColor(.white)
@@ -51,7 +52,7 @@ struct ContentView: View {
                             .clipShape(Circle())
                     }
                     .padding(5)
-                    
+                        
                     Button {
                         
                     } label: {
@@ -70,37 +71,39 @@ struct ContentView: View {
                 }
                 
                 HStack{
-                    NumberBtn(value: 7)
+                    NumberBtn(value: "7", result: $result)
                     
-                    NumberBtn(value: 8)
+                    NumberBtn(value: "8", result: $result)
                     
-                    NumberBtn(value: 9)
+                    NumberBtn(value: "9", result: $result)
                     
                     OperationBtn(operation: "multiply")
                 }
                 
                 HStack{
-                    NumberBtn(value: 4)
+                    NumberBtn(value: "4", result: $result)
                     
-                    NumberBtn(value: 5)
+                    NumberBtn(value: "5", result: $result)
                     
-                    NumberBtn(value: 6)
+                    NumberBtn(value: "6", result: $result)
                     
                     OperationBtn(operation: "minus")
                 }
                 
                 HStack{
-                    NumberBtn(value: 1)
+                    NumberBtn(value: "1", result: $result)
                     
-                    NumberBtn(value: 2)
+                    NumberBtn(value: "2", result: $result)
                     
-                    NumberBtn(value: 3)
+                    NumberBtn(value: "3", result: $result)
                     
                     OperationBtn(operation: "plus")
                 }
                 HStack{
                     Button {
-                        
+                        if result != "0" {
+                            result += "0"
+                        }
                     } label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 50)
