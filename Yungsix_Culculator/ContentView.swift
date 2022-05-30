@@ -11,6 +11,7 @@ struct ContentView: View {
     @State var stateNum = "0"
     @State var firstNum = "0"
     @State var lastNum = "0"
+    @State var firstOper = "plus"
     
     var body: some View {                          
         ZStack {
@@ -30,6 +31,8 @@ struct ContentView: View {
                     Button {
                         if stateNum != "0" {
                             stateNum = "0"
+                        }else {
+                            firstNum = "0"
                         }
                     } label: {
                         let ac = stateNum == "0" ? "AC" : "C"
@@ -71,7 +74,7 @@ struct ContentView: View {
                     }
                     .padding(5)
                     
-                    OperationBtn(operation: "divide")
+                    OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "divide")
                 }
                 
                 HStack{
@@ -81,7 +84,7 @@ struct ContentView: View {
                     
                     NumberBtn(value: "9", result: $stateNum)
                     
-                    OperationBtn(operation: "multiply")
+                    OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper ,operation: "multiply")
                 }
                 
                 HStack{
@@ -91,7 +94,7 @@ struct ContentView: View {
                     
                     NumberBtn(value: "6", result: $stateNum)
                     
-                    OperationBtn(operation: "minus")
+                    OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "minus")
                 }
                 
                 HStack{
@@ -101,7 +104,7 @@ struct ContentView: View {
                     
                     NumberBtn(value: "3", result: $stateNum)
                     
-                    OperationBtn(operation: "plus")
+                    OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "plus")
                 }
                 HStack{
                     Button {
@@ -142,7 +145,7 @@ struct ContentView: View {
                     .padding(5)
                     
                     
-                    OperationBtn(operation: "equal")
+                    OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "equal")
                     
                 }
                 
