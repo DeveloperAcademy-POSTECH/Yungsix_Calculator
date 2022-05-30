@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var result = "0"
+    @State var stateNum = "0"
     @State var firstNum = "0"
+    @State var lastNum = "0"
     
     var body: some View {                          
         ZStack {
@@ -18,7 +19,7 @@ struct ContentView: View {
                 
                 HStack{
                     Spacer()
-                    Text(result)
+                    Text(stateNum)
                         .font(.system(size: 100))
                         .fontWeight(.light)
                         .foregroundColor(.white)
@@ -27,9 +28,12 @@ struct ContentView: View {
                 
                 HStack{
                     Button {
-                        
+                        if stateNum != "0" {
+                            stateNum = "0"
+                        }
                     } label: {
-                        Text("AC")
+                        let ac = stateNum == "0" ? "AC" : "C"
+                        Text(ac)
                             .fontWeight(.medium)
                             .padding()
                             .frame(width: 75, height: 75)
@@ -71,38 +75,38 @@ struct ContentView: View {
                 }
                 
                 HStack{
-                    NumberBtn(value: "7", result: $result)
+                    NumberBtn(value: "7", result: $stateNum)
                     
-                    NumberBtn(value: "8", result: $result)
+                    NumberBtn(value: "8", result: $stateNum)
                     
-                    NumberBtn(value: "9", result: $result)
+                    NumberBtn(value: "9", result: $stateNum)
                     
                     OperationBtn(operation: "multiply")
                 }
                 
                 HStack{
-                    NumberBtn(value: "4", result: $result)
+                    NumberBtn(value: "4", result: $stateNum)
                     
-                    NumberBtn(value: "5", result: $result)
+                    NumberBtn(value: "5", result: $stateNum)
                     
-                    NumberBtn(value: "6", result: $result)
+                    NumberBtn(value: "6", result: $stateNum)
                     
                     OperationBtn(operation: "minus")
                 }
                 
                 HStack{
-                    NumberBtn(value: "1", result: $result)
+                    NumberBtn(value: "1", result: $stateNum)
                     
-                    NumberBtn(value: "2", result: $result)
+                    NumberBtn(value: "2", result: $stateNum)
                     
-                    NumberBtn(value: "3", result: $result)
+                    NumberBtn(value: "3", result: $stateNum)
                     
                     OperationBtn(operation: "plus")
                 }
                 HStack{
                     Button {
-                        if result != "0" {
-                            result += "0"
+                        if stateNum != "0" {
+                            stateNum += "0"
                         }
                     } label: {
                         ZStack{
