@@ -37,7 +37,7 @@ struct OperationBtn: View {
         case "plus":
             firstNum = "\(Int(firstNum)! + Int(stateNum)!)"
             print(firstNum)
-            stateNum = "0"
+            // stateNum = "0"
             break
         case "minus":
             firstNum = "\(Int(firstNum)! - Int(stateNum)!)"

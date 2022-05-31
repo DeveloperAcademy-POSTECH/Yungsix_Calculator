@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    //스테이트 -> 바인딩으로 넣은 방식.
     @State var stateNum = "0"   // 현재 보여지는 값
     @State var firstNum = "0"   // 전에 입력된 값
-    @State var firstOper = "plus" // 전에 입력된 연산자
-    @State var click = false    //연산 버튼 클릭 확인
+    @State var firstOper = "" // 전에 입력된 연산자
+    @State var click = false    //연산 버튼 클릭 확인 /지금 사용 안되는중
     
     var body: some View {                          
         ZStack {

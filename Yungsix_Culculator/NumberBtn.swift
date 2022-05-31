@@ -21,7 +21,7 @@ struct NumberBtn: View {                // 숫자 버튼
                 }
                 
             } label: {
-                Text("\(value)")
+                Text(value)
                     .fontWeight(.medium)
                     .padding()
                     .frame(width: 75, height: 75)
