@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var result: Int = 0
+    //스테이트 -> 바인딩으로 넣은 방식.
+    @State var stateNum = "0"   // 현재 보여지는 값
+    @State var firstNum = "0"   // 전에 입력된 값
+    @State var firstOper = "" // 전에 입력된 연산자
+    @State var click = false    //연산 버튼 클릭 확인 /지금 사용 안되는중
     
     var body: some View {                          
         ZStack {
@@ -17,7 +21,7 @@ struct ContentView: View {
                 
                 HStack{
                     Spacer()
-                    Text(result, format: .number)
+                    Text(stateNum)              // 입력한 숫자 나오는 부분
                         .font(.system(size: 100))
                         .fontWeight(.light)
                         .foregroundColor(.white)
@@ -25,10 +29,15 @@ struct ContentView: View {
                 }.padding(.horizontal, 0)
                 
                 HStack{
-                    Button {
-                        
+                    Button {                    // AC 버튼
+                        if stateNum != "0" {
+                            stateNum = "0"
+                        }else {
+                            firstNum = "0"
+                        }
                     } label: {
-                        Text("AC")
+                        let ac = stateNum == "0" ? "AC" : "C"
+                        Text(ac)
                             .fontWeight(.medium)
                             .padding()
                             .frame(width: 75, height: 75)
@@ -39,7 +48,7 @@ struct ContentView: View {
                     }
                     .padding(5)
                     
-                    Button {
+                    Button {                // +/- 버튼
                         
                     } label: {
                         Image(systemName: "plus.forwardslash.minus")
@@ -51,8 +60,8 @@ struct ContentView: View {
                             .clipShape(Circle())
                     }
                     .padding(5)
-                    
-                    Button {
+                        
+                    Button {                // % 버튼
                         
                     } label: {
                         Text("%")
@@ -66,41 +75,44 @@ struct ContentView: View {
                     }
                     .padding(5)
                     
-                    OperationBtn(operation: "divide")
+                                        // 눕힌% 버튼
+                    OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "divide")
                 }
                 
-                HStack{
-                    NumberBtn(value: 7)
+                HStack{                 //버튼 7, 8, 9, X
+                    NumberBtn(value: "7", result: $stateNum)
                     
-                    NumberBtn(value: 8)
+                    NumberBtn(value: "8", result: $stateNum)
                     
-                    NumberBtn(value: 9)
+                    NumberBtn(value: "9", result: $stateNum)
                     
-                    OperationBtn(operation: "multiply")
+                    OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper ,operation: "multiply")
                 }
                 
-                HStack{
-                    NumberBtn(value: 4)
+                HStack{                 //버튼 4, 5, 6, -
+                    NumberBtn(value: "4", result: $stateNum)
                     
-                    NumberBtn(value: 5)
+                    NumberBtn(value: "5", result: $stateNum)
                     
-                    NumberBtn(value: 6)
+                    NumberBtn(value: "6", result: $stateNum)
                     
-                    OperationBtn(operation: "minus")
+                    OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "minus")
                 }
                 
-                HStack{
-                    NumberBtn(value: 1)
+                HStack{                 // 버튼 1, 2, 3, +
+                    NumberBtn(value: "1", result: $stateNum)
                     
-                    NumberBtn(value: 2)
+                    NumberBtn(value: "2", result: $stateNum)
                     
-                    NumberBtn(value: 3)
+                    NumberBtn(value: "3", result: $stateNum)
                     
-                    OperationBtn(operation: "plus")
+                    OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "plus")
                 }
                 HStack{
-                    Button {
-                        
+                    Button {                // 버튼 0
+                        if stateNum != "0" {
+                            stateNum += "0"
+                        }
                     } label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 50)
@@ -120,7 +132,7 @@ struct ContentView: View {
                         .padding(5)
                     }
                     
-                    Button {
+                    Button {                // 버튼 .
                         
                     } label: {
                         Text(".")
@@ -134,8 +146,8 @@ struct ContentView: View {
                     }
                     .padding(5)
                     
-                    
-                    OperationBtn(operation: "equal")
+                                            // 버튼 =
+                    OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "equal")
                     
                 }
                 
