@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var stateNum = "0"
-    @State var firstNum = "0"
-    @State var lastNum = "0"
-    @State var firstOper = "plus"
+    @State var stateNum = "0"   // 현재 보여지는 값
+    @State var firstNum = "0"   // 전에 입력된 값
+    @State var firstOper = "plus" // 전에 입력된 연산자
+    @State var click = false    //연산 버튼 클릭 확인
     
     var body: some View {                          
         ZStack {
@@ -20,7 +20,7 @@ struct ContentView: View {
                 
                 HStack{
                     Spacer()
-                    Text(stateNum)
+                    Text(stateNum)              // 입력한 숫자 나오는 부분
                         .font(.system(size: 100))
                         .fontWeight(.light)
                         .foregroundColor(.white)
@@ -28,7 +28,7 @@ struct ContentView: View {
                 }.padding(.horizontal, 0)
                 
                 HStack{
-                    Button {
+                    Button {                    // AC 버튼
                         if stateNum != "0" {
                             stateNum = "0"
                         }else {
@@ -47,7 +47,7 @@ struct ContentView: View {
                     }
                     .padding(5)
                     
-                    Button {
+                    Button {                // +/- 버튼
                         
                     } label: {
                         Image(systemName: "plus.forwardslash.minus")
@@ -60,7 +60,7 @@ struct ContentView: View {
                     }
                     .padding(5)
                         
-                    Button {
+                    Button {                // % 버튼
                         
                     } label: {
                         Text("%")
@@ -74,10 +74,11 @@ struct ContentView: View {
                     }
                     .padding(5)
                     
+                                        // 눕힌% 버튼
                     OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "divide")
                 }
                 
-                HStack{
+                HStack{                 //버튼 7, 8, 9, X
                     NumberBtn(value: "7", result: $stateNum)
                     
                     NumberBtn(value: "8", result: $stateNum)
@@ -87,7 +88,7 @@ struct ContentView: View {
                     OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper ,operation: "multiply")
                 }
                 
-                HStack{
+                HStack{                 //버튼 4, 5, 6, -
                     NumberBtn(value: "4", result: $stateNum)
                     
                     NumberBtn(value: "5", result: $stateNum)
@@ -97,7 +98,7 @@ struct ContentView: View {
                     OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "minus")
                 }
                 
-                HStack{
+                HStack{                 // 버튼 1, 2, 3, +
                     NumberBtn(value: "1", result: $stateNum)
                     
                     NumberBtn(value: "2", result: $stateNum)
@@ -107,7 +108,7 @@ struct ContentView: View {
                     OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "plus")
                 }
                 HStack{
-                    Button {
+                    Button {                // 버튼 0
                         if stateNum != "0" {
                             stateNum += "0"
                         }
@@ -130,7 +131,7 @@ struct ContentView: View {
                         .padding(5)
                     }
                     
-                    Button {
+                    Button {                // 버튼 .
                         
                     } label: {
                         Text(".")
@@ -144,7 +145,7 @@ struct ContentView: View {
                     }
                     .padding(5)
                     
-                    
+                                            // 버튼 =
                     OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "equal")
                     
                 }

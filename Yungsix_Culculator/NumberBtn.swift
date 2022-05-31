@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NumberBtn: View {
+struct NumberBtn: View {                // 숫자 버튼
     var value: String
     @Binding var result: String
     
