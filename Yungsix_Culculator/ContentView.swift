@@ -13,6 +13,8 @@ struct ContentView: View {
     @State var firstNum = "0"   // 전에 입력된 값
     @State var firstOper = "" // 전에 입력된 연산자
     @State var click = false    //연산 버튼 클릭 확인 /지금 사용 안되는중
+    var buttonWidth = 75.0
+    var buttonHeight = 75.0
     
     var body: some View {                          
         ZStack {
@@ -40,7 +42,7 @@ struct ContentView: View {
                         Text(ac)
                             .fontWeight(.medium)
                             .padding()
-                            .frame(width: 75, height: 75)
+                            .frame(width: buttonWidth, height: buttonHeight)
                             .foregroundColor(.black)
                             .background(.gray)
                             .font(.title)
@@ -53,7 +55,7 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "plus.forwardslash.minus")
                             .padding()
-                            .frame(width: 75, height: 75)
+                            .frame(width: buttonWidth, height: buttonHeight)
                             .foregroundColor(.black)
                             .background(.gray)
                             .font(.title)
@@ -67,7 +69,7 @@ struct ContentView: View {
                         Text("%")
                             .fontWeight(.medium)
                             .padding()
-                            .frame(width: 75, height: 75)
+                            .frame(width: buttonWidth, height: buttonHeight)
                             .foregroundColor(.black)
                             .background(.gray)
                             .font(.title)
@@ -138,7 +140,7 @@ struct ContentView: View {
                         Text(".")
                             .fontWeight(.heavy)
                             .padding()
-                            .frame(width: 75, height: 75)
+                            .frame(width: buttonWidth, height: buttonHeight)
                             .foregroundColor(.white)
                             .background(Color("numberColor"))
                             .font(.largeTitle)
