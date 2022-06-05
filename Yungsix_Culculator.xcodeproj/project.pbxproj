@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7934D604284B2590008A857A /* ButtonName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934D603284B2590008A857A /* ButtonName.swift */; };
+		7934D60C284C796B008A857A /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934D60B284C796B008A857A /* ButtonView.swift */; };
 		793BF8D9283E4FD400AC455C /* Yungsix_CulculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793BF8D8283E4FD400AC455C /* Yungsix_CulculatorApp.swift */; };
 		793BF8DB283E4FD400AC455C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793BF8DA283E4FD400AC455C /* ContentView.swift */; };
 		793BF8DD283E4FD500AC455C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793BF8DC283E4FD500AC455C /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7934D603284B2590008A857A /* ButtonName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonName.swift; sourceTree = "<group>"; };
+		7934D60B284C796B008A857A /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		793BF8D5283E4FD400AC455C /* Yungsix_Culculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yungsix_Culculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		793BF8D8283E4FD400AC455C /* Yungsix_CulculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yungsix_CulculatorApp.swift; sourceTree = "<group>"; };
 		793BF8DA283E4FD400AC455C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 				793BF8DA283E4FD400AC455C /* ContentView.swift */,
 				79C23503284091630096C331 /* NumberBtn.swift */,
 				79BA22DE28420CC700BBD4FF /* OperationBtn.swift */,
+				7934D603284B2590008A857A /* ButtonName.swift */,
+				7934D60B284C796B008A857A /* ButtonView.swift */,
 				793BF8DC283E4FD500AC455C /* Assets.xcassets */,
 				793BF8DE283E4FD500AC455C /* Preview Content */,
 			);
@@ -145,8 +151,10 @@
 			files = (
 				793BF8DB283E4FD400AC455C /* ContentView.swift in Sources */,
 				79BA22DF28420CC700BBD4FF /* OperationBtn.swift in Sources */,
+				7934D60C284C796B008A857A /* ButtonView.swift in Sources */,
 				79C23504284091630096C331 /* NumberBtn.swift in Sources */,
 				793BF8D9283E4FD400AC455C /* Yungsix_CulculatorApp.swift in Sources */,
+				7934D604284B2590008A857A /* ButtonName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

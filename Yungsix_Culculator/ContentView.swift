@@ -16,6 +16,14 @@ struct ContentView: View {
     var buttonWidth = 75.0
     var buttonHeight = 75.0
     
+    let buttons: [[ButtonName]] = [
+        [.clear, .mark, .percent, .div],
+        [.seven, .eight, .nine, .mul],
+        [.four, .five, .six, .minus],
+        [.one, .two, .three, .plus],
+        [.zero, .dot, .equal]
+    ]
+    
     var body: some View {                          
         ZStack {
             VStack{
@@ -40,14 +48,8 @@ struct ContentView: View {
                     } label: {
                         let ac = stateNum == "0" ? "AC" : "C"
                         Text(ac)
-                            .fontWeight(.medium)
-                            .padding()
-                            .frame(width: buttonWidth, height: buttonHeight)
-                            .foregroundColor(.black)
-                            .background(.gray)
-                            .font(.title)
-                            .clipShape(Circle())
                     }
+                    .buttonStyle(CalculatorButton())
                     .padding(5)
                     
                     Button {                // +/- 버튼
@@ -82,31 +84,55 @@ struct ContentView: View {
                 }
                 
                 HStack{                 //버튼 7, 8, 9, X
-                    NumberBtn(value: "7", result: $stateNum)
                     
-                    NumberBtn(value: "8", result: $stateNum)
+                    Button("1"){
+                        
+                    }.buttonStyle(CalculatorButton())
                     
-                    NumberBtn(value: "9", result: $stateNum)
+                    Button("1"){
+                        
+                    }.buttonStyle(CalculatorButton())
                     
-                    OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper ,operation: "multiply")
+                    Button("1"){
+                        
+                    }.buttonStyle(CalculatorButton())
+                    
+                    Button("1"){
+                        
+                    }.buttonStyle(CalculatorButton())
                 }
                 
                 HStack{                 //버튼 4, 5, 6, -
-                    NumberBtn(value: "4", result: $stateNum)
+                    Button("1"){
+                        
+                    }.buttonStyle(CalculatorButton())
                     
-                    NumberBtn(value: "5", result: $stateNum)
+                    Button("1"){
+                        
+                    }.buttonStyle(CalculatorButton())
                     
-                    NumberBtn(value: "6", result: $stateNum)
+                    Button("1"){
+                        
+                    }.buttonStyle(CalculatorButton())
                     
-                    OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "minus")
+                    Button("1"){
+                        
+                    }.buttonStyle(CalculatorButton())
                 }
                 
                 HStack{                 // 버튼 1, 2, 3, +
-                    NumberBtn(value: "1", result: $stateNum)
+                    Button("1"){
+                        
+                    }.buttonStyle(CalculatorButton())
                     
-                    NumberBtn(value: "2", result: $stateNum)
+                    Button("1"){
+                        
+                    }.buttonStyle(CalculatorButton())
                     
-                    NumberBtn(value: "3", result: $stateNum)
+                    Button("1"){
+                        
+                    }.buttonStyle(CalculatorButton())
+                    
                     
                     OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "plus")
                 }
@@ -147,7 +173,6 @@ struct ContentView: View {
                             .clipShape(Circle())
                     }
                     .padding(5)
-                    
                                             // 버튼 =
                     OperationBtn(stateNum: $stateNum, firstNum: $firstNum, firstOper: $firstOper, operation: "equal")
                     
@@ -168,4 +193,20 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+}
+
+struct CalculatorButton: ButtonStyle {
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.largeTitle)
+            .padding()
+            .foregroundColor(.white)
+            .frame(width: 75, height: 75)
+            .background(Color("numberColor"))
+            .clipShape(Circle())
+            
+            
+    }
+    
 }
