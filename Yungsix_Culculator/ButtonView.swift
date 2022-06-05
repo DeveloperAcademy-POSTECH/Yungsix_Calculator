@@ -12,47 +12,61 @@ struct ButtonView: View {
     var button: ButtonName
     
     var body: some View {
-        if button == .zero{
-            Button {                // 버튼 0
+        switch button {
+        case .zero:
+            return AnyView(Button {                // 버튼 0
                 
             } label: {
                 ZStack{
                     RoundedRectangle(cornerRadius: 50)
-                        .frame(width: 170.0, height: 80.0)
-                        .foregroundColor(Color("numberColor"))
+                        .frame(width: 170.0, height: 75.0)
+                        .foregroundColor(button.backgroundColor)
                     HStack{
-                        Text("0")
+                        Text(button.title)
                             .fontWeight(.medium)
                             .padding()
-                            .foregroundColor(.white)
-                            .font(.largeTitle)
+                            .foregroundColor(button.foregroundColor)
+                            .font(button.fontStyle)
                         Spacer()
                     }
-                    .frame(width: 140.0, height: 70.0)
+                    .frame(width: 140.0, height: 75.0)
                     
-                }
-                .padding(5)
-            }
-        }else {
-            Button {
+                }.padding(5)
+            })
+        case .plus, .minus, .div, .mul, .equal, .mark, .percent:
+            return AnyView(
+                Button {            // 연산자 버튼
+                    
+                } label: {
+                    Image(systemName: button.title)
+                        .padding()
+                        .frame(width: 75, height: 75)
+                        .foregroundColor(button.foregroundColor)
+                        .background(button.backgroundColor)
+                        .font(button.fontStyle)
+                        .clipShape(Circle())
+                }.padding(5))
+       
+        default :
+            return AnyView(Button {             //숫자 버튼
                 
             } label: {
                 Text(button.title)
                     .fontWeight(.medium)
                     .padding()
                     .frame(width: 75, height: 75)
-                    .foregroundColor(.white)
+                    .foregroundColor(button.foregroundColor)
                     .background(button.backgroundColor)
-                    .font(.largeTitle)
+                    .font(button.fontStyle)
                     .clipShape(Circle())
-            }
+            }.padding(5))
+            
         }
     }
-    
 }
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(button: .plus)
+        ButtonView(button: .clear)
     }
 }

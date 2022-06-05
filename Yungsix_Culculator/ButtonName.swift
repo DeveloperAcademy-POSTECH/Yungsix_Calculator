@@ -26,13 +26,13 @@ enum ButtonName: String {
         case .eight: return "8"
         case .nine: return "9"
         case .dot: return "."
-        case .plus: return "􀅼"
-        case .minus: return "􀅽"
-        case .mul : return "􀅾"
-        case .div : return "􀅿"
-        case .equal: return "􀆀"
-        case .mark: return "􀅺"
-        case .percent: return "􀘾"
+        case .plus: return "plus"
+        case .minus: return "minus"
+        case .mul : return "multiply"
+        case .div : return "divide"
+        case .equal: return "equal"
+        case .mark: return "plus.forwardslash.minus"
+        case .percent: return "percent"
         default: return "AC"
         }
     }
@@ -45,6 +45,28 @@ enum ButtonName: String {
             return Color(.gray)
         default :
             return Color(.orange)
+        }
+    }
+    
+    var foregroundColor: Color {
+        switch self {
+        case .plus, .minus, .mul, .div, .equal:
+            return Color(.white)
+        case .clear, .mark, .percent:
+            return Color(.black)
+        default :
+            return Color(.white)
+        }
+    }
+    
+    var fontStyle: Font {
+        switch self {
+        case .clear:
+            return Font.title
+        case .plus, .minus, .mul, .div, .equal, .percent, .mark:
+            return Font.system(size: 30, weight: .bold)
+        default:
+            return Font.largeTitle
         }
     }
     
