@@ -8,13 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    //스테이트 -> 바인딩으로 넣은 방식.
-    @State var stateNum = "0"   // 현재 보여지는 값
-    @State var firstNum = "0"   // 전에 입력된 값
-    @State var firstOper = "" // 전에 입력된 연산자
-    @State var click = false    //연산 버튼 클릭 확인 /지금 사용 안되는중
-    var buttonWidth = 75.0
-    var buttonHeight = 75.0
+    
+    @StateObject var text = CalculatorModel()   // 디스플레이에 보여주는 값
     
     let buttons: [[ButtonName]] = [
         [.clear, .mark, .percent, .div],
@@ -31,7 +26,7 @@ struct ContentView: View {
                 
                 HStack{
                     Spacer()
-                    Text(stateNum)              // 입력한 숫자 나오는 부분
+                    Text(text.result)              // 입력한 숫자 나오는 부분
                         .font(.system(size: 100))
                         .fontWeight(.light)
                         .foregroundColor(.white)

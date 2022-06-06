@@ -11,11 +11,13 @@ struct ButtonView: View {
     
     var button: ButtonName
     
+    @ObservedObject var title = CalculatorModel()
+    
     var body: some View {
         switch button {
         case .zero:
             return AnyView(Button {                // 버튼 0
-                
+                title.inputButton(button: button)
             } label: {
                 ZStack{
                     RoundedRectangle(cornerRadius: 50)
@@ -35,8 +37,8 @@ struct ButtonView: View {
             })
         case .plus, .minus, .div, .mul, .equal, .mark, .percent:
             return AnyView(
-                Button {            // 연산자 버튼
-                    
+                Button {                        // 연산자 버튼
+                    title.inputButton(button: button)
                 } label: {
                     Image(systemName: button.title)
                         .padding()
@@ -49,7 +51,7 @@ struct ButtonView: View {
        
         default :
             return AnyView(Button {             //숫자 버튼
-                
+                title.inputButton(button: button)
             } label: {
                 Text(button.title)
                     .fontWeight(.medium)

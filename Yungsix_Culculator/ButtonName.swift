@@ -17,7 +17,7 @@ enum ButtonName: String {
         switch self {
         case .zero: return "0"
         case .one: return "1"
-        case .two: return "2"
+        case .two: return "2"       	
         case .three: return "3"
         case .four: return "4"
         case .five: return "5"
@@ -33,7 +33,8 @@ enum ButtonName: String {
         case .equal: return "equal"
         case .mark: return "plus.forwardslash.minus"
         case .percent: return "percent"
-        default: return "AC"
+        case .clear: return "AC"
+        default: return "C"
         }
     }
     
