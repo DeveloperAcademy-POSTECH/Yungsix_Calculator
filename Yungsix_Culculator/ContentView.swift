@@ -23,15 +23,16 @@ struct ContentView: View {
         ZStack {
             VStack{
                 Spacer()
-                
                 HStack{
-                    Spacer()
                     Text(text.result)              // 입력한 숫자 나오는 부분
                         .font(.system(size: 100))
                         .fontWeight(.light)
                         .foregroundColor(.white)
+                        .minimumScaleFactor(0.2)
+                        .lineLimit(1)
+                        .frame(width: 320,alignment: .bottomTrailing)
                         .padding()
-                }.padding(.horizontal, 0)
+                }.padding(.horizontal)
                 
                 ForEach(buttons, id: \.self) { row in
                     HStack{

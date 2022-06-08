@@ -10,7 +10,6 @@ import Foundation
 class CalculatorModel : ObservableObject {
     
     @Published var result = "0"
-    let secondResult = ""
     
     var first = ""
     var second = ""
@@ -20,7 +19,7 @@ class CalculatorModel : ObservableObject {
     func inputNumber(button: ButtonName) {              // 숫자 입력 함수
         
         if operation != nil && operCheck {              // 연산자가 입력되었으면
-            operCheck = false
+            operCheck = false                           // 문자열을 계속 입력받게 확인
             first = result
             result = ""
         }
@@ -46,40 +45,51 @@ class CalculatorModel : ObservableObject {
             second = ""
             operation = nil
             return
+        }else if button == .mark {
+            result = String(format: "%.f", Double(result)! - Double(result)! * 2)
+            return
+        }else if button == .dot {
+            result += "."
+            return
         }
         
-        if first == "" {
+        if first == "" {                                // = 클릭하지 않고 계속 연산할 경우.
             first = result
             operCheck = true
             operation = button
             return
         }
         
-        
-        if operation == .plus {
+        if operation == .plus{
             let sum = Double(first)! + Double(result)!
             operation = button
-            result = String(format: "%.f", sum)
+            result = String(sum)
             operCheck = true
-            
+            return
         }else if operation == .minus {
             let min = Double(first)! - Double(result)!
             operation = button
-            result = String(format: "%.f", min)
+            result = String(min)
             operCheck = true
-            
+            return
         }else if operation == .div {
-            
+            let div = Double(first)! / Double(result)!
+            operation = button
+            result = String(div)
+            operCheck = true
+            return
         }else if operation == .mul {
-            
-        }else if operation == .mark {
-            
-        }else if operation == .dot {
-            
-        }else if button == .equal {
-            operation = nil
+            let mul = Double(first)! * Double(result)!
+            operation = button
+            result = String(mul)
+            operCheck = true
+            return
         }
+        
         
     }
     
+    //
 }
+
+
