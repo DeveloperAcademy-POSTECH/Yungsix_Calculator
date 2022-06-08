@@ -9,15 +9,14 @@ import SwiftUI
 
 struct ButtonView: View {
     
+    var title: CalculatorModel
     var button: ButtonName
-    
-    @ObservedObject var title = CalculatorModel()
     
     var body: some View {
         switch button {
         case .zero:
             return AnyView(Button {                // 버튼 0
-                title.inputButton(button: button)
+                title.inputNumber(button: button)
             } label: {
                 ZStack{
                     RoundedRectangle(cornerRadius: 50)
@@ -35,10 +34,10 @@ struct ButtonView: View {
                     
                 }.padding(5)
             })
-        case .plus, .minus, .div, .mul, .equal, .mark, .percent:
+        case .plus, .minus, .div, .mul, .mark, .percent, .equal:
             return AnyView(
                 Button {                        // 연산자 버튼
-                    title.inputButton(button: button)
+                    title.inputOperaiton(button: button)
                 } label: {
                     Image(systemName: button.title)
                         .padding()
@@ -48,10 +47,14 @@ struct ButtonView: View {
                         .font(button.fontStyle)
                         .clipShape(Circle())
                 }.padding(5))
-       
+            
         default :
             return AnyView(Button {             //숫자 버튼
-                title.inputButton(button: button)
+                if button == .clear{
+                    title.inputOperaiton(button: button)
+                }else {
+                    title.inputNumber(button: button)
+                }
             } label: {
                 Text(button.title)
                     .fontWeight(.medium)
@@ -69,6 +72,6 @@ struct ButtonView: View {
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(button: .clear)
+        ButtonView(title: CalculatorModel(), button: .clear)
     }
 }

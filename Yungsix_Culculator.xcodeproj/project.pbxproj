@@ -59,8 +59,8 @@
 			children = (
 				793BF8D8283E4FD400AC455C /* Yungsix_CulculatorApp.swift */,
 				793BF8DA283E4FD400AC455C /* ContentView.swift */,
-				7934D603284B2590008A857A /* ButtonName.swift */,
 				7934D60B284C796B008A857A /* ButtonView.swift */,
+				7934D603284B2590008A857A /* ButtonName.swift */,
 				79599EAE284DF4DD00BC5397 /* CalculatorModel.swift */,
 				793BF8DC283E4FD500AC455C /* Assets.xcassets */,
 				793BF8DE283E4FD500AC455C /* Preview Content */,

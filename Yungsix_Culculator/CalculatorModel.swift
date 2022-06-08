@@ -10,35 +10,49 @@ import Foundation
 class CalculatorModel : ObservableObject {
     
     @Published var result = "0"
+    
+    var arr = [String]()
+    
     var first = ""
     var second = ""
     var operation = ""
     
-    func inputButton(button: ButtonName) {
+    func inputNumber(button: ButtonName) {              // 숫자 입력 함수
         
-        if button.title == "plus" {
-            
-        }else if button.title == "minus" {
-
-        }else if button.title == "multiply" {
-
-        }else if button.title == "divide"{
-
-        }else if button.title == "plus.forwardslash.minus" {
-            
-        }else if button.title == "percent" {
-            
-        }else if button.title == "AC" {
-            
-        }else if button.title == "." {
-            
-        }else if button.title == "=" {
-            
+        if result == "0"{
+            result = button.title
+            arr.append(button.title)
         }else {
+            result += button.title
+        }
+        
+    }
+    
+    func inputOperaiton(button: ButtonName) {           // 연산자 입력 함수
+    
+        first = result
+        operation = button.title
+        
+        if button == .plus {
+            
+        }else if button == .minus {
+                        
+        }else if button == .div {
+            
+        }else if button == .mul {
+            
+        }else if button == .mark {
+            
+        }else if button == .percent {
+            
+        }else if button == .clear {
+            result = "0"
+        }else if button == .dot {
+            
+        }else if button == .equal {
             
         }
         
-        
-        
     }
+    
 }

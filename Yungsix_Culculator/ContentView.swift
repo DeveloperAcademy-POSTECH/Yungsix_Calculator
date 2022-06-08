@@ -36,7 +36,7 @@ struct ContentView: View {
                 ForEach(buttons, id: \.self) { row in
                     HStack{
                         ForEach(row, id: \.self) { button in
-                            ButtonView(button: button)
+                            ButtonView(title: text, button: button)
                         }
                     }
                 }
@@ -55,20 +55,4 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
-
-struct CalculatorButton: ButtonStyle {
-    
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(.largeTitle)
-            .padding()
-            .foregroundColor(.white)
-            .frame(width: 75, height: 75)
-            .background(Color("numberColor"))
-            .clipShape(Circle())
-            
-            
-    }
-    
 }
