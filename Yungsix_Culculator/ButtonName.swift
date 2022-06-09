@@ -11,34 +11,13 @@ import SwiftUI
 //모든 버튼을 한번에 처리
 //각각의 버튼 스타일 지정.
 enum ButtonName: String {
-    case zero, one, two, three, four, five, six, seven, eight, nine, dot
-    case plus, minus, mul, div, equal
-    case clear, mark, percent
+    case zero = "0", one = "1", two = "2", three = "3", four = "4", five = "5", six = "6",
+         seven = "7", eight = "8", nine = "9", dot = "."
+    case plus = "plus", minus = "minus", mul = "multiply", div = "divide", equal = "equal"
+    case clear = "AC", mark = "plus.forwardslash.minus", percent = "percent"
     
-    var title: String {
-        switch self {
-        case .zero: return "0"
-        case .one: return "1"
-        case .two: return "2"       	
-        case .three: return "3"
-        case .four: return "4"
-        case .five: return "5"
-        case .six: return "6"
-        case .seven: return "7"
-        case .eight: return "8"
-        case .nine: return "9"
-        case .dot: return "."
-        case .plus: return "plus"
-        case .minus: return "minus"
-        case .mul : return "multiply"
-        case .div : return "divide"
-        case .equal: return "equal"
-        case .mark: return "plus.forwardslash.minus"
-        case .percent: return "percent"
-        case .clear: return "AC"
-//        default: return "C"
-        }
-    }
+    
+    var title: String { self.rawValue }
     
     var backgroundColor: Color {
         switch self {
