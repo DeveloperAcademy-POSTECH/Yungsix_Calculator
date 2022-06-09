@@ -64,7 +64,7 @@ class CalculatorModel : ObservableObject {
             let sum = Double(first)! + Double(result)!
             operation = button
             result = String(sum)
-            operCheck = true
+            operCheck = true //연산자가 입력받음.
             return
         }else if operation == .minus {
             let min = Double(first)! - Double(result)!

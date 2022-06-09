@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+//모든 버튼을 한번에 처리
+//각각의 버튼 스타일 지정.
 enum ButtonName: String {
     case zero, one, two, three, four, five, six, seven, eight, nine, dot
     case plus, minus, mul, div, equal
@@ -34,7 +36,7 @@ enum ButtonName: String {
         case .mark: return "plus.forwardslash.minus"
         case .percent: return "percent"
         case .clear: return "AC"
-        default: return "C"
+//        default: return "C"
         }
     }
     

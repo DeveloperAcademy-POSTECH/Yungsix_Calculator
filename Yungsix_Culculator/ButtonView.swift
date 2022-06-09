@@ -56,7 +56,7 @@ struct ButtonView: View {
                     title.inputNumber(button: button)
                 }
             } label: {
-                Text(button.title)
+                Text(button.title) // 
                     .fontWeight(.medium)
                     .padding()
                     .frame(width: 75, height: 75)
